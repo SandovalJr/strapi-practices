@@ -23,9 +23,9 @@ module.exports = async (policyContext, config, { strapi }) => {
   // console.log(order);
 
 
-  // if (order.owner.id === user.id) {
-  //   return true
-  // }
+  if (order.owner.id === user.id) {
+    return true
+  }
 
 
   throw new PolicyError("You're not allowed to do this")
