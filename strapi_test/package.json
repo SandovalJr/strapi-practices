@@ -1,0 +1,9 @@
+{
+  "name": "strapi_filters",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "qs": "^6.10.5"
+  }
+}
