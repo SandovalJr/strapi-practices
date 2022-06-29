@@ -22,7 +22,7 @@
     "owner": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::order.order"
+      "target": "plugin::users-permissions.user"
     },
     "products": {
       "type": "relation",
