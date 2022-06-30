@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pruebagraphs",
+  "info": {
+    "singularName": "pruebagraph",
+    "pluralName": "pruebagraphs",
+    "displayName": "pruebagraph"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "valor": {
+      "type": "integer"
+    }
+  }
+}
