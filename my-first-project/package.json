@@ -16,7 +16,8 @@
     "@strapi/strapi": "4.2.0",
     "better-sqlite3": "7.4.6",
     "formidable": "^2.0.1",
-    "koa-body": "^5.0.0"
+    "koa-body": "^5.0.0",
+    "qrcode": "^1.5.1"
   },
   "author": {
     "name": "A Strapi developer"

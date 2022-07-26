@@ -60,8 +60,51 @@ module.exports = createCoreController('api::product.product',
             const producto = await strapi.entityService.findOne("api::product.product", id)
             // console.log(producto);
             return producto
-        }
+        },
 
+        // crear codigo qr y guardar la ruta en la bd
+        qrCode: async (ctx, next) => {
+            const { id } = ctx.request.params
+            const QRCode = require('qrcode');
+
+            const data = await strapi.entityService.findMany("api::product.product",
+                { filters: { id: id }, populate: ['order'] })
+
+            const jsondata = JSON.stringify(data[0]);
+
+            // qr code 
+            // const QR = async info => {
+            //     try {
+            //         console.log(await QRCode.toString(info, { type: 'terminal' }))
+            //     } catch (err) {
+            //         console.error(err)
+            //     }
+            // }
+
+            // QR(jsondata);
+
+            // data del qr encode
+            const generateQR = async info => {
+                try {
+                    var qrdata = await QRCode.toDataURL(info)
+                    qrdata.toString();
+                    console.log(qrdata)
+                    let updateData = await strapi.entityService.update("api::product.product", id, {
+                        data: {
+                            qr: qrdata
+                        }
+                    })
+                    return updateData
+
+                } catch (err) {
+                    console.error(err)
+                }
+            }
+
+            
+
+            return generateQR(jsondata)
+        }
 
     })
 

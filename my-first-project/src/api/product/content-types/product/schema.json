@@ -35,6 +35,9 @@
         "videos",
         "audios"
       ]
+    },
+    "qr": {
+      "type": "text"
     }
   }
 }
